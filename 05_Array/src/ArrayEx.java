@@ -57,6 +57,7 @@ public class ArrayEx {
         // 새 배열을 생성
         String[] newArray = new String[5];
         // System.arraycopy를 이용한 옮기기
+        // 이동할 배열 ,
         System.arraycopy(names, 0, newArray, 0, names.length);
         // newArray를 다시 names 이름 변경
         names = newArray;
@@ -92,6 +93,59 @@ public class ArrayEx {
         String[] seasons1 = { "autumn", "winter" };
         seasons1 = java.util.Arrays.copyOf(seasons1, 4);
         // 방식 2 새 배열을 만들고 복사 System.arraycopy() 사용
+        String[] newArray2 = new String[4];
+        // 원본 배열 / 시작할 인덱스 / 복사할 배열 / 시작할 인덱스 / 복사할 개수
+        System.arraycopy(seasons1, 0, newArray2, 0, 2);
+        // 이전 작업이 완료 될 시 이름 변경
+        newArray2 = seasons1;
+        // 4. 다음 정수형 배열의 모든 요소들의 저장 순서를 뒤집으세요.
+        int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        // 반복문을 사용하여 앞 순서 인덱스 값과 뒷순서 인덱스 값을 교환
+        for (int i = 0; i < numbers.length / 2; i++) {// 절반만 교환하면 되니 length의 절반만 반복
+            int temp = numbers[i];// 앞자리의 인덱스의 값을 temp에 저장
+            // -i를 하면 length는 인덱스와 다르게 1이 크니 1을 더해줌
+            numbers[i] = numbers[numbers.length - 1 - i];
+            // 마지막 인덱스의 값을 현재 인덱스의 값으로 덮어씌움
+            numbers[numbers.length - 1 - i] = temp;
+        }
+        // 5. 다음 정수형 배열이 오름차순으로 정렬되어 있으면 true, 아니면 false를 boolean result 변수에 저장하세요.
+        // int[] numbers2 = { 1, 2, 3, 4, 5, 0 };
+        // boolean result = true;
+        // int num = 0;
+        // int temp = 0;
+        // for (int i = 1; i < numbers2.length; i++) {
+        // 내가 생각하는 기본적인 방식
+        // num = numbers2[i - 1];
+        // temp = numbers2[i];
+        // if (num > temp) {
+        // result = false;
+        // break;
+        // }
+        // 깔끔한 삼항연산자 방식
+        // 만약 앞 인덱스 숫자가 뒷 인덱스 숫자보다 높다면 false 반환
+        // result = numbers2[i-1] > numbers2[i] ? false : result;
+        // gpt 추천 패턴(실무방식?)
+        // 기본으로는 true로 되지만 만약 앞 숫자가 뒷 숫자보다 작다면 false 반환
+        // result = result && (numbers2[i-1] > numbers2[i]);
+        // }
 
+        // 6. uppers 배열에는 대문자를 순서대로 저장하고, lowers 배열에는 소문자를 순서대로 저장하세요.
+        // 배열의 타입은 char[]로 처리하세요.
+        // 영문자는 26개라서 26개의 배열을 만듬
+        // char[] uppers = new char[26];
+        // char[] lowers = new char[26];
+        // int num2 = 65;// 대문자 A +1이 될수록 B.C....
+        // int num3 = 97;// 소문자 a
+        // for (int i = 0; i < uppers.length; i++) {
+        // uppers[i] = (char) (num2 + i);
+        // lowers[i] = (char) (num3 + i);
+        // }
+        // 정답으로 나온 리터럴 방식
+        // for (int i = 0; i < uppers.length; i++) {
+        //     uppers[i] = (char) ('A' + i);
+        //     lowers[i] = (char) ('a' + i);
+        // }
+        // 7. 10진수(number)를 2진수로 변환한 결과를 int[] binary에 저장하세요.
+        
     }
 }
