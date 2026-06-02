@@ -1,0 +1,9 @@
+{
+  "java.project.sourcePaths": ["src"],
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "/Users/eongdeong-ihaejeogdan/Downloads/SaSAC_AWS/JavaStudy/lib/lombok.jar",
+    "/Users/eongdeong-ihaejeogdan/Downloads/SaSAC_AWS/JavaStudy/lib/mysql-connector-j-8.0.33.jar"
+  ]
+}
